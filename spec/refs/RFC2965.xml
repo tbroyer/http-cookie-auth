@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='RFC2965'>
+
+<front>
+<title>HTTP State Management Mechanism</title>
+<author initials='D. M.' surname='Kristol' fullname='David M. Kristol'>
+<organization>Bell Laboratories, Lucent Technologies</organization>
+<address>
+<postal>
+<street>600 Mountain Ave.  Room 2A-333</street>
+<city>Murray Hill</city>
+<region>NJ</region>
+<code>07974</code></postal>
+<phone>(908) 582-2250</phone>
+<facsimile>(908) 582-1239</facsimile>
+<email>dmk@bell-labs.com</email></address></author>
+<author initials='L.' surname='Montulli' fullname='Lou Montulli'>
+<organization>Epinions.com, Inc.</organization>
+<address>
+<postal>
+<street>2037 Landings Dr.</street>
+<city>Mountain View</city>
+<region>CA</region>
+<code>94301</code></postal>
+<email>lou@montulli.org</email></address></author>
+<date year='2000' month='October' />
+<abstract>
+<t>
+     This document specifies a way to create a stateful session with
+     Hypertext Transfer Protocol (HTTP) requests and responses.  It
+     describes three new headers, Cookie, Cookie2, and Set-Cookie2, which
+     carry state information between participating origin servers and user
+     agents.  The method described here differs from Netscape's Cookie
+     proposal , but it can interoperate with HTTP/1.0 user
+     agents that use Netscape's method.  (See the HISTORICAL section.)
+    </t>
+<t>
+     This document reflects implementation experience with RFC 2109 and
+     obsoletes it.
+     </t></abstract></front>
+
+<seriesInfo name='RFC' value='2965' />
+<format type='TXT' octets='56176' target='ftp://ftp.isi.edu/in-notes/rfc2965.txt' />
+<format type='HTML' octets='84336' target='http://xml.resource.org/public/rfc/html/rfc2965.html' />
+<format type='XML' octets='60779' target='http://xml.resource.org/public/rfc/xml/rfc2965.xml' />
+</reference>

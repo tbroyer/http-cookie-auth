@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding='UTF-8'?>
+
+<reference anchor="W3C.NOTE-authentform-19990203">
+<front>
+<title>User Agent Authentication Forms</title>
+
+<author initials="S" surname="Lawrence" fullname="Scott Lawrence">
+    <organization />
+</author>
+
+<author initials="P" surname="Leach" fullname="Paul Leach">
+    <organization />
+</author>
+
+<date month="February" day="3" year="1999" />
+</front>
+
+<seriesInfo name="W3C NOTE" value="NOTE-authentform-19990203" />
+<format type="HTML" target="http://www.w3.org/TR/1999/NOTE-authentform-19990203" />
+</reference>

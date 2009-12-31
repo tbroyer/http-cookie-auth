@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='W3C.WD-html5-20090825'
+           target='http://www.w3.org/TR/2009/WD-html5-20090825'>
+<front>
+<title>HTML 5</title>
+
+<author initials='D.' surname='Hyatt' fullname='David Hyatt'>
+    <organization />
+</author>
+
+<author initials='I.' surname='Hickson' fullname='Ian Hickson'>
+    <organization />
+</author>
+
+<date month='August' day='25' year='2009' />
+</front>
+
+<seriesInfo name='World Wide Web Consortium WD' value='WD-html5-20090825' />
+<format type='HTML' target='http://www.w3.org/TR/2009/WD-html5-20090825' />
+</reference>
