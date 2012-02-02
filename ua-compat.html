@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<title>How are login pages returned today?</title>
+<style>
+dt, th { font-weight: bold }
+table { border-collapse: collapse; }
+tbody { border: 2px solid }
+tr { border: 1px solid }
+tbody th[scope=rowgroup] { text-align: left; font-size: 110% }
+tr > td:first-of-type { padding: 1em }
+</style>
+
+<h1>How are login pages returned in today's frameworks, applications and sites/services?</h1>
+<p>Results are grouped in three classes:
+<dl>
+<dt><a href=#frameworks>Frameworks</a>
+<dd>Code that developers use to build applications and sites
+<dt><a href=#apps>Applications</a>
+<dd>Tools that you install on your own servers
+<dt><a href=#sites>Sites / services</a>
+<dd>Web sites and online <abbr title="Software as a Service">SaaS</abbr>
+</dl>
+
+<table>
+<thead>
+<tr><th>Framework / Application/Tool / Site/Service
+    <th>Status code (not signed in)
+    <th>Status code (bad credentials)
+    <th>Cookie name
+    <th>Cookie name hardwired?
+    <th>Cookie tied to authenticated session?
+    <th>Notes
+
+<tbody>
+<tr><th colspan=1000 scope=rowgroup id=frameworks>Frameworks
+<tr><td>ASP.NET (Forms authentication)
+    <td>302
+    <td>
+    <td>.ASPXAUTH
+    <td>No
+    <td>No
+    <td>
+<tr><td><a href=http://www.alfresco.com>Alfresco</a> SURF
+    <td>200
+    <td>
+    <td>JSESSIONID
+    <td>See notes
+    <td>No
+    <td>Actually, the cookie name is the one used by the servlet container. It should be JSESSIONID per spec but is configurable in some containers.
+
+
+<tbody>
+<tr><th colspan=1000 scope=rowgroup id=apps>Applications
+<tr><td><a href=http://www.ja-sig.org/products/cas/><abbr title="Central Authentication Service">CAS</abbr></a> (version 3.1.1)
+    <td>200
+    <td>
+    <td>CASTGC
+    <td>Yes
+    <td>Yes
+    <td><abbr>CAS</abbr> also has the ability to use HTTP or SSL certificate.
+<tr><td><a href=http://typo3.com>Typo3</a> (admin backend)
+    <td>200
+    <td>
+    <td>
+    <td>
+    <td>yes (at least <code>index.php</code> does not set a cookie)
+    <td>The <code>index.php</code> page is the login form. When you access another page (say <code>alt_main.php</code>), you're not given the login form but an error page (though still using a 200 status) with a link to <code>index.php</code>.
+<tr><td><a href=http://www.dotproject.net>dotProject</a>
+    <td>200
+    <td>
+    <td>dotproject
+    <td>
+    <td>no
+    <td>They really do want your browser to not cache pages: <pre>
+Date: Mon, 12 Jan 2009 16:46:47 GMT
+Last-Modified: Mon, 12 Jan 2009 16:46:47 GMT
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Cache-Control: no-cache, must-revalidate, no-store, post-check=0, pre-check=0
+Pragma: no-cache
+</pre>
+<tr><td><a href=http://www.alfresco.com>Alfresco</a> Explorer (for Alfresco Share, see Alfresco SURF in <a href=#framework>frameworks</a>)
+    <td>302
+    <td>
+    <td>JSESSIONID
+    <td>
+    <td>no
+    <td>Alfresco Explorer uses JSF, so after a successful sign-in, you're given the page you requested at the <code>login.jsp</code> URL. Also, actually, Alfresco also uses a <code>_alfTest</code> cookie to test if the browser supports cookies (I haven't checked what happens if it does not) and a <code>alfUser</code> cookie (set by the next request after signing in?!), which seems only used to prefill the username field of the login form when you come back later (or logout)
+
+<tbody>
+<tr><th colspan=1000 scope=rowgroup id=sites>Sites / Services
+<tr><td><a href=http://www.facebook.com>Facebook</a>
+    <td>302
+    <td>200
+    <td>h_user, login_x
+    <td>
+    <td>Yes
+    <td>
+<tr><td>Some hotel wifi (<a href=http://www.quickspot.biz/wifi/fiche-hotspot/1225/toulouse-ariane.html>QuickSpot 2.0</a>)
+    <td>200
+    <td>(untested)
+    <td>
+    <td>
+    <td>
+    <td>Redirects from the first http request to the login page using a 200 OK status with <code>no-cache</code> and a <code>&lt;meta> refresh</code>.
+
+<tbody>
+<tr><th colspan=1000 scope=rowgroup id=sso-idp>SSO Identity Provider
+<tr><td><a href=http://www.google.com/accounts/>Google Accounts</a>
+    <td>200
+    <td>
+    <td>LSID
+    <td>
+    <td>Yes
+    <td><p>Tested here when redirected from GMail.
+        <p>Also sets a SID cookie with <code>Domain=.google.com;Path=/</code> (probably for GMail) and a CAL cookie with <code>Domain=www.google.com;Path=/calendar</code> (for Google Calendar?)
+<tr><td><a href=http://saml.xml.org/>SAML 2.0</a> SSO Profile with HTTP Redirect binding (as implemented in <a href=http://shibboleth.internet2.edu>Shibboleth</a>)
+    <td>302
+    <td>200
+    <td>h_user, login_x
+    <td>
+    <td>Yes
+    <td>
+
+<tbody>
+<tr><th colspan=1000 scope=rowgroup id=sso-sp>SSO Service Provider (aka Consumer)
+<tr><td><a href=http://mail.google.com/mail/>GMail</a>
+    <td>302
+    <td>N/A
+    <td>GX and GMAIL_AT (at least)
+    <td>
+    <td>Yes
+    <td>GMail issues a redirect to Google Accounts
+
+</table>
+
