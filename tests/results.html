@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<title>Test results</title>
+<style>
+dt, th { font-weight: bold }
+th { white-space: nowrap; }
+</style>
+
+<table border=1>
+<col><!-- test name -->
+<col><!-- legend -->
+<colgroup class=ie span=3></colgroup>
+<colgroup class=firefox span=3></colgroup>
+<colgroup class=safari></colgroup>
+<colgroup class=chrome span=3></colgroup>
+<colgroup class=opera span=3></colgroup>
+<colgroup class=mobile span=4></colgroup>
+<col><!-- notes -->
+
+<thead>
+<tr><th rowspan=3>
+    <th>
+    <th colspan=3>Internet Explorer
+    <th colspan=3>Firefox
+    <th>Safari
+    <th colspan=3>Chrome
+    <th colspan=3>Opera
+    <th colspan=4>Mobile browsers
+    <th colspan=3>Text-based browsers
+    <th rowspan=3>Additional notes
+<tr><th scope=row>OS
+    <th colspan=3>Windows XP SP3
+    <th colspan=3>Windows XP SP3
+    <th>Windows XP SP3
+    <th colspan=3>Windows XP SP3
+    <th colspan=3>Windows XP SP3
+    <th colspan=2>Sony Ericsson<br>K750i
+    <th colspan=2>Samsung<br>Player Style<br>(SGH F480i)
+    <th colspan=3>Linux (Debian)
+<tr><th scope=row>Version
+    <th>6
+    <th>7
+    <th>8
+    <th>3.0.16
+    <th>3.5.6
+    <th>3.6b5
+    <th>4.0.4<br>(531.21.10)
+    <th>Stable<br>(3.0.195.38)
+    <th>Beta<br>(4.0.249.43)
+    <th>Dev<br>(4.0.266.0)
+    <th>9.64
+    <th>10.10
+    <th>10.50<br>b3186
+    <th>Buit-in
+    <th>Opera<br>Mini 4
+    <th>Built-in<br>(NetFront 3.4)
+    <th>Opera Mini<br>5 beta 2
+    <th><a href=#lynx>Lynx<br>2.8.7dev.4</a>
+    <th><a href=#elinks>ELinks<br>0.11.1</a>
+    <th><a href=#w3m>w3m<br>0.5.2</a>
+
+<tbody>
+<tr><th><a href="basic-and-cookie.asis">basic-and-cookie</a>
+    <td><dl>
+        <dt>Basic
+        <dd>Ask for Basic credentials
+        <dt>Render
+        <dd>Do not ask, just displays the 401 response body
+        <dt>Error
+        <dd>Displays an error page
+        </dl>
+    <td colspan=3>Basic
+    <td colspan=3>Basic
+    <td>Basic
+    <td colspan=3>Basic
+    <td colspan=3>Basic
+    <td colspan=4><i>Untested</i>
+    <td colspan=3>Basic
+    <td>
+
+<tr><th><a href="basic-auth-in-200.asis">basic-auth-in-200</a>
+    <td><dl>
+        <dt>Render
+        <dd>Do not ask, just displays the response body
+        <dt>Basic
+        <dd>Ask for Basic credentials
+        </dl>
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td>Render
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td colspan=4>Render
+    <td colspan=3>Render
+    <td>
+
+<tr><th><a href="cookie-and-basic.asis">cookie-and-basic</a>
+    <td><dl>
+        <dt>Basic
+        <dd>Ask for Basic credentials
+        <dt>Render
+        <dd>Do not ask, just displays the 401 response body
+        <dt>Error
+        <dd>Displays an error page
+        </dl>
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td>Render
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td colspan=4>Render
+    <td colspan=3>Render
+    <td><ul>
+        <li>Opera 9.64 displays an error page (<q>The server requested a login authentication method that is not supported.</q>) when the authentication schemes are merged into a single header.
+        <li>Lynx first asks whether you want to see the <q>401 message body</q>
+        </ul>
+
+<tr><th><a href="location-in-401.asis">location-in-401</a>
+    <td><dl>
+        <dt>Render
+        <dd>Displays the 401 response body
+        <dt>Redirect
+        <dd>Follow the redirect
+        <dt>Error
+        <dd>Displays an error page
+        </dl>
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td>Render
+    <td colspan=3>Render
+    <td>Error
+    <td colspan=2>Render
+    <td colspan=4>Render
+    <td colspan=3>Render
+    <td><ul>
+        <li>Opera 9.64 displays an error page (<q>The server requested a login authentication method that is not supported.</q>) because of the <code>Cookie</code> authentication scheme used in the test.
+        <li>Lynx first asks whether you want to see the <q>401 message body</q>
+        </ul>
+
+<tr><th><a href="new-redirect-status-with-www-authentication.asis">new-redirect-status-with-www-authentication</a>
+    <td><dl>
+        <dt>Render
+        <dd>Displays the 308 response body
+        <dt>Redirect
+        <dd>Follow the redirect
+        </dl>
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td>Redirect
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td colspan=4>Render
+    <td colspan=3>Render
+    <td>Lynx first shows an alert about the unknown status code before following the link
+
+<tr><th><a href="new-redirect-status.asis">new-redirect-status</a>
+    <td><dl>
+        <dt>Render
+        <dd>Displays the 308 response body
+        <dt>Redirect
+        <dd>Follow the redirect
+        </dl>
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td>Redirect
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td colspan=4>Render
+    <td colspan=3>Render
+    <td>Lynx first shows an alert about the unknown status code before following the link
+
+<tr><th><a href="no-www-authenticate.asis">no-www-authenticate</a>
+    <td><dl>
+        <dt>Render
+        <dd>Displays the 401 response body
+        <dt>Basic
+        <dd>Ask for Basic credentials
+        </dl>
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td>Render
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td colspan=4>Render
+    <td colspan=3>Render
+    <td>Lynx first asks whether you want to see the <q>401 message body</q>
+
+<tr><th><a href="test00/">WWW-Authenticate: Cookie</a>
+    <td><dl>
+        <dt>Render
+        <dd>Displays the 401 response body
+        <dt>Basic
+        <dd>Ask for Basic credentials
+        <dt>Error
+        <dd>Displays an error page
+        </dl>
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td>Render
+    <td colspan=3>Render
+    <td>Error
+    <td colspan=2>Render
+    <td colspan=2><i>Untested</i>
+    <td>Render
+    <td><i>Untested</i>
+    <td colspan=3><i>Needs more testing</i>
+    <td><ul>
+        <li>Opera 9.64 displays an error page (<q>The server requested a login authentication method that is not supported.</q>) because of the <code>Cookie</code> authentication scheme used in the test.
+        <li>be careful about caching: upon deleting the cookie, Opera 10.x won't reload the page from the server even with <code>Cache-Control: no-cache</code>
+        <li>Lynx first asks whether you want to see the <q>401 message body</q>
+        </ul>
+
+<tr><th><a href="test01/">Single Sign-On</a>
+    <td><dl>
+        <dt>Render
+        <dd>Displays the 401 response body
+        <dt>Basic
+        <dd>Ask for Basic credentials
+        <dt>Error
+        <dd>Displays an error page
+        </dl>
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td>Render
+    <td colspan=3>Render
+    <td>Error
+    <td colspan=2>Render
+    <td colspan=2><i>Untested</i>
+    <td>Render
+    <td><i>Untested</i>
+    <td colspan=3><i>Needs more testing</i>
+    <td><ul>
+        <li>Firefox 3.5 and 3.6 won't allow you to completely sign out (you'll be signed out from <code>broyer.info</code> but not from <code>ltgt.net</code>)
+        <li>Opera 9.64 displays an error page (<q>The server requested a login authentication method that is not supported.</q>) because of the <code>Cookie</code> authentication scheme used in the test.
+        <li>be careful about caching: upon deleting the cookie, Opera 10.x won't reload the page from the server even with <code>Cache-Control: no-cache</code>
+        <li>Lynx first asks whether you want to see the <q>401 message body</q>
+        </ul>
+
+<tr><th><a href="www-authenticate-in-200.asis">www-authenticate-in-200</a>
+    <td><dl>
+        <dt>Render
+        <dd>Do not ask, just displays the response body
+        <dt>Basic
+        <dd>Ask for Basic credentials
+        </dl>
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td>Render
+    <td colspan=3>Render
+    <td colspan=3>Render
+    <td colspan=4>Render
+    <td colspan=3>Render
+    <td>
+
+</table>
+
+
+
+<dl>
+<dt id=lynx>Lynx
+<dd><pre>
+Lynx Version 2.8.7dev.4 (14 Nov 2006)
+libwww-FM 2.14, SSL-MM 1.4.1, GNUTLS 1.4.4, ncurses 5.5.20060422(wide)
+Built on linux-gnu Nov 16 2006 09:52:30
+
+Copyrights held by the Lynx Developers Group,
+the University of Kansas, CERN, and other contributors.
+Distributed under the GNU General Public License (Version 2).
+See http://lynx.isc.org/ and the online help for more information.
+</pre>
+
+<dt id=elinks>ELinks
+<dd><pre>
+ELinks 0.11.1 (built on Sep 24 2007 20:53:21)
+
+Features:
+Standard, Fastmem, IPv6, gzip, bzip2, Periodic Saving, Timer, Cascading Style Sheets,
+Protocol (File, FTP, HTTP, NNTP, URI rewrite, User protocols), SSL (GnuTLS),
+MIME (Option system, Mailcap, Mimetypes files), LED indicators, Bookmarks,
+Cookies, Form History, Global History, Scripting (Lua, Perl), Goto URL History,
+Search History
+</pre>
+
+<dt id=w3m>w3m
+<dd><pre>
+w3m version w3m/0.5.2, options lang=en,m17n,image,color,ansi-color,mouse,gpm,menu,cookie,ssl,ssl-verify,external-uri-loader,w3mmailer,nntp,gopher,ipv6,alarm,mark,migemo
+</pre>
+
+</dl>

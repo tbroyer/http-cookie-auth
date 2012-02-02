@@ -1,0 +1,23 @@
+Status: 401 Unauthorized
+Vary: Cookie
+Cache-Control: no-cache
+WWW-Authenticate: Cookie realm="test01@ltgt.net";cookie-name="AUTHORIZED"
+Content-Type: text/html
+
+<!doctype html>
+<title>Authorization, please wait...</title>
+<noscript>
+  <meta http-equiv=refresh content="0;url=http://broyer.info/tests/">
+</noscript>
+<script>
+function authorized() {
+  document.cookie = 'AUTHORIZED=TRUE';
+  location.reload();
+}
+</script>
+<script src=http://broyer.info/tests/check.js></script>
+<h1>Please wait...</h1>
+<p>This page is shown because you do not have a cookie set with the name <code>AUTHORIZED</code>.
+<p>It'll load a script from <code>broyer.info</code> whose content depends on whether you're authenticated there. If that's the case, the page should set the <code>ltgt.net</code> cookie and refresh to show you the protected resource. Otherwise, you'll be directed to <code>broyer.info</code> to sign in.
+<p>The cookie is set here from javascript. You'd generally want to use other means, such as redirecting to an URL that will set the cookie and redirect back to the protected resource.
+

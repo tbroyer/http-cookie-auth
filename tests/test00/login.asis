@@ -1,0 +1,9 @@
+Status: 200 OK
+Set-Cookie: AUTHORIZED=TRUE; path=/tests/http-cookie-auth/test00
+Content-Type: text/html
+
+<!doctype html>
+<title>Logged in</title>
+<h1>Logged in</h1>
+<p>You should've been logged in. Try it <a href=/tests/http-cookie-auth/test00/ >here</a>, you should see the protected page.
+

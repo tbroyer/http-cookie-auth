@@ -1,0 +1,5 @@
+Status: 303 See Other
+Set-Cookie: AUTHORIZED=FALSE; expires=Thu, 2 Aug 2001 20:47:11 UTC; path=/tests/http-cookie-auth/test01
+Location: http://broyer.info/tests/logout
+Content-Length: 0
+

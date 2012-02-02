@@ -1,0 +1,7 @@
+Status: 401 Unauthorized
+Content-Type: text/html
+
+<!doctype html>
+<title>Unauthorized</title>
+<p>This page is sent with a 401 (Unauthorized) status with no WWW-Authenticate header (this is a willful violation of the HTTP spec, for testing purposes).
+

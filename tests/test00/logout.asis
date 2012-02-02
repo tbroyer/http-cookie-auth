@@ -1,0 +1,9 @@
+Status: 200 OK
+Set-Cookie: AUTHORIZED=FALSE; expires=Thu, 2 Aug 2001 20:47:11 UTC; path=/tests/http-cookie-auth/test00
+Content-Type: text/html
+
+<!doctype html>
+<title>Logged out</title>
+<h1>Logged out</h1>
+<p>You should've been logged out. Try it <a href=/tests/http-cookie-auth/test00/ >here</a>
+

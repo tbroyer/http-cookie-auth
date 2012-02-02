@@ -1,0 +1,9 @@
+DirectoryIndex index.asis
+
+RewriteEngine on
+RewriteBase /tests/http-cookie-auth/test00
+
+RewriteCond %{HTTP_COOKIE} !AUTHORIZED\s*=
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule !log.* unauthorized.asis
+

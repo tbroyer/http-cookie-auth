@@ -1,0 +1,14 @@
+DirectoryIndex index.asis
+
+RewriteEngine on
+RewriteBase /tests
+
+RewriteCond %{HTTP_COOKIE} AUTHORIZED\s*=
+RewriteRule check.js authorized.js.asis [L]
+
+RewriteRule check.js unauthorized.js.asis [L]
+
+RewriteCond %{HTTP_COOKIE} !AUTHORIZED\s*=
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule !^(log.*|.*\.js(\.asis)?)$ unauthorized.asis
+

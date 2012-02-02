@@ -1,0 +1,7 @@
+Status: 200 OK
+Vary: Cookie
+Cache-Control: no-cache
+Content-Type: application/javascript
+
+authorized();
+

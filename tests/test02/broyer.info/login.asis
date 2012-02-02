@@ -1,0 +1,10 @@
+Status: 200 OK
+Set-Cookie: AUTHORIZED=TRUE; path=/tests
+Content-Type: text/html
+
+<!doctype html>
+<title>Logged in</title>
+<h1>Logged in</h1>
+<p>You should've been logged in. Try it <a href=/tests/ >here</a>, you should see the protected page.
+<p>Or go directly to <a href=http://ltgt.net/tests/http-cookie-auth/test01/><code>ltgt.net</code></a> where you should be authenticated too.
+

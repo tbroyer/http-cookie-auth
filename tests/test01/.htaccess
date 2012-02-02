@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /tests/http-cookie-auth/test01
+
+RewriteRule (.*) ltgt.net/$1
+

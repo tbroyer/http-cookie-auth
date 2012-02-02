@@ -1,0 +1,9 @@
+Status: 401 Unauthorized
+WWW-Authenticate: Basic realm="Basic"
+WWW-Authenticate: Cookie realm="Cookie"
+Content-Type: text/html
+
+<!doctype html>
+<title>Unauthorized</title>
+<p>This page is sent with a 401 (Unauthorized) status with both a Basic and Cookie WWW-Authenticate headers (in this order).
+

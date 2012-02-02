@@ -1,0 +1,7 @@
+Status: 308 Unauthorized, See Other
+Location: http://broyer.info/tests/
+Content-Type: text/html
+
+<!doctype html>
+<title>Unauthorized</title>
+<p>This page is sent with a new 3xx status (Unauthorized, See Other) status.

@@ -1,0 +1,11 @@
+Status: 200 OK
+Vary: Cookie
+Cache-Control: no-cache
+Content-Type: text/html
+
+<!doctype html>
+<title>Protected page</title>
+<h1>Protected page</h1>
+<p>This page is protected by a cookie (named <code>AUTHORIZED</code>, having this cookie set, whichever the value, is enough to see this page; not very secure, but hey, it's just a demo!)
+<p>You can sign out by deleting the cookie or clicking <a href=/tests/http-cookie-auth/test00/logout>this link</a> which will do it for you.
+
