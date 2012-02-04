@@ -134,7 +134,7 @@ validation sends the appropriate ``Set-Cookie2`` response header
 fields with a 303 (See Other) response redirecting back to the
 protected resource.
 
-The "cookie" authentication scheme is however not limited ot such
+The "cookie" authentication scheme is however not limited to such
 scenarios: the response body could be for example an SVG image with an
 embedded XForms, or an HTML document with an embedded script that will
 compute a hash of user-provided data and set the cookie by script
@@ -190,7 +190,7 @@ Syntax (using the augmented Backus-Naur Form (BNF) defined in `Section
     **REQUIRED**. The value of the *cookie-name* attribute is the name
     of the cookie that is checked by the server to authenticate the
     user; an UA thus could then inform the user this cookie is necessary
-    to gain access to the protected resource, and eentually use a
+    to gain access to the protected resource, and eventually use a
     different, more secure, storage than for other cookies.
 
   secure-cookie-name
@@ -227,10 +227,10 @@ Alternatives
 
 * `User Agent Authentication Forms` [W3C.NOTE-authentform-19990203]_
 
-Acknowledgements
+Acknowledgments
 ################
 Thanks to those who raised the issue to the WHAT Working Group and the
-World Wide Web Consortium's HTML WOrking Group; to Ian Hickson for his
+World Wide Web Consortium's HTML Working Group; to Ian Hickson for his
 summary of the issue and a similar proposed (tied to HTML though).
 
 Many thanks to Julian Reschke for his encouragements and help with
@@ -257,7 +257,7 @@ the cookie used for authentication **SHOULD NOT** contain the users
 credentials but rather a key associated with the authenticated
 session, and this key **SHOULD** be renewed (and expired) frequently.
 
-Sensitive information (such as the user's IBAN on an onlin store) and
+Sensitive information (such as the user's IBAN on an online store) and
 sensitive actions (such as confirming an order) **SHOULD** only happen
 on a secure channel such as `HTTP Over TLS` [RFC2818]_, and protected
 with a secure cookie (a cookie with the *Secure* bit set) so that it
